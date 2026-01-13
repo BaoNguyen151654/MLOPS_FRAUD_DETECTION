@@ -22,6 +22,8 @@ Within seconds, the system flags the transactions, blocks the card, and sends yo
 
 ## 2/ Model Development: ##
 
+### a) Algorithm Selection
+
 To tackle this fraud detection challenge, I turn to my trusted ally:
 
 <p align="center">
@@ -32,3 +34,13 @@ To tackle this fraud detection challenge, I turn to my trusted ally:
   <img src="Images/gif.gif" alt="Funny GIF" />
 </p>
 
+**Why do I choose XGBoost?**
+Simply because of its efficiency. Just imagine that a single false positive can result in a $10,000 loss for your customer.
+Trusting such a task to a simple KNN model?
+**Hear me out, bro. That should be illegal 🙃.**
+
+I’m not saying KNN or Logistic Regression are bad algorithms, they just aren’t production-ready.
+A system receives more and more data every day, while KNN tends to overfit on large datasets.
+As for Logistic Regression, the model performs well only if the data satisfies certain assumptions, such as a linear relationship, which is very rare in real-world scenarios.
+
+## 3/ Feature Engineering
