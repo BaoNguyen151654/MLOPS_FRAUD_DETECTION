@@ -54,8 +54,7 @@ I mean, come on, you can’t use **next_transaction_amount** in the real world, 
 And here are the features I used. I have classified them into three types:
 
 **Tracking features:** 
-I’m not sure if this is the right name. These features are used to track transactions and to generate other online features.  
-They are not used for training the model. The tracking features include:
+I’m not sure if this is the right name. These features are used to track transactions and to generate other online features. They are not used for training the model. The tracking features include:
 
 - **cc_num:** Unique identifier for each customer. 
 - **trans_date_trans_time:** The time at which a user makes a transaction. In this simulation, this feature is automatically retrieved from the user’s system clock when they click **“Send Money”**.
