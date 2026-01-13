@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=giabao04052000
+      - DB_NAME=Transactions_Database
+    volumes:
+      - .:/app
+    restart: always
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: giabao04052000
+      MYSQL_DATABASE: Transactions_Database
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init_data.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  mysql_data:
