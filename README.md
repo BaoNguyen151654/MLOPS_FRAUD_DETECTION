@@ -46,3 +46,18 @@ As for Logistic Regression, the model performs well only if the data satisfies c
 ### b) Feature Engineering ###
 
 This is the dataset I used for this project. You can download it from [here](https://www.kaggle.com/datasets/kartik2112/fraud-detection).
+
+And here are the features I used. I have classified them into three types:
+
+**Tracking features:** 
+I’m not sure if this is the right name. These features are used to track transactions and to generate other online features.  
+They are not used for training the model. The tracking features include:
+
+- **cc_num:** Unique identifier for each customer. 
+- **trans_date_trans_time:** The time at which a user makes a transaction. In this simulation, this feature is automatically retrieved from the user’s system clock when they click **“Send Money”**
+- **Merchant:** Who gets the money from the transaction.
+
+**Offline Features:** The user provides the system with these features before making a transaction.
+
+
+
