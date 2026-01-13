@@ -10,4 +10,4 @@ Then one night, at 2:45 AM, while you’re peacefully asleep, your credit card s
 
 💥 Another big purchase a few minutes later.
 
-💥 Both occurring nearly 500 miles apart.
+💥 Both occurring nearly 1000 miles apart.
