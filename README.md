@@ -54,10 +54,19 @@ I’m not sure if this is the right name. These features are used to track trans
 They are not used for training the model. The tracking features include:
 
 - **cc_num:** Unique identifier for each customer. 
-- **trans_date_trans_time:** The time at which a user makes a transaction. In this simulation, this feature is automatically retrieved from the user’s system clock when they click **“Send Money”**
+- **trans_date_trans_time:** The time at which a user makes a transaction. In this simulation, this feature is automatically retrieved from the user’s system clock when they click **“Send Money”**.
 - **Merchant:** Who gets the money from the transaction.
 
 **Offline Features:** The user provides the system with these features before making a transaction.
+
+- **category**: The category of the transaction, such as personal care, food and dining, etc.
+- **amt**: The total amount of the transaction.
+- **lat** and **long**: The geographic coordinates of the user when making a transaction.  
+  In a real system, this information would be retrieved via the user's GPS.  
+  In this simulation, the coordinates are randomly generated when the user clicks "Send Money".
+- **merch_lat** and **merch_long**: The geographic coordinates of the recipient. Just like lat and long, they are generated randomly.  
+
+
 
 
 
