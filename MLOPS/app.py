@@ -39,7 +39,7 @@ FEATURE_COLUMNS = [
 def get_db_connection():
     db_host = os.environ.get('DB_HOST', 'localhost')
     db_user = os.environ.get('DB_USER', 'root')
-    db_password = os.environ.get('DB_PASSWORD', 'giabao04052000')
+    db_password = os.environ.get('DB_PASSWORD', '****')
     db_name = os.environ.get('DB_NAME', 'Transactions_Database')
 
     retries = 5
@@ -296,3 +296,4 @@ def index():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
