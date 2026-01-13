@@ -1,1 +1,1 @@
-# MLOPS_FRAUD_DETECTION
+# MLops pipelines for real-time fraud detection
