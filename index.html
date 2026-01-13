@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            padding-top: 50px;
+        }
+        .main-card {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .header-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #343a40;
+            font-weight: bold;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="main-card">
+        <h2 class="header-title">💸 Money Transfer</h2>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} text-center" role="alert">
+                        <strong>{{ message }}</strong>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="/">
+            
+            <div class="mb-3">
+                <label for="cc_num" class="form-label">Select Your Card ID (cc_num)</label>
+                <select class="form-select" id="cc_num" name="cc_num" required>
+                    <option value="" disabled selected>-- Choose a Card ID --</option>
+                    {% for cc in cc_nums %}
+                        <option value="{{ cc }}">{{ cc }}</option>
+                    {% endfor %}
+                </select>
+                <div class="form-text text-muted">Simulation: Randomly loaded 5 IDs from DB.</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="merchant" class="form-label">Merchant Name</label>
+                <select class="form-select" id="merchant" name="merchant" required>
+                    <option value="" disabled selected>-- Choose Merchant --</option>
+                    {% for m in merchants %}
+                        <option value="{{ m }}">{{ m }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="category" class="form-label">Transaction Category</label>
+                <select class="form-select" id="category" name="category" required>
+                    <option value="" disabled selected>-- Choose Category --</option>
+                    {% for cat in categories %}
+                        <option value="{{ cat }}">{{ cat }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="amount" class="form-label">Amount ($)</label>
+                <input type="number" step="0.01" min="0" class="form-control" id="amount" name="amount" placeholder="Enter amount (e.g. 50.00)" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">Send Money</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
