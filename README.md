@@ -43,4 +43,6 @@ Iâ€™m not saying KNN or Logistic Regression are bad algorithms, they just arenâ€
 A system receives more and more data every day, while KNN tends to overfit on large datasets.
 As for Logistic Regression, the model performs well only if the data satisfies certain assumptions, such as a linear relationship, which is very rare in real-world scenarios.
 
-## 3/ Feature Engineering
+### b) Feature Engineering ###
+
+This is the dataset I used for this project. You can download it from [here](https://www.kaggle.com/datasets/kartik2112/fraud-detection).
