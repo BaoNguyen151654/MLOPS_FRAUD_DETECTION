@@ -18,7 +18,7 @@ The fraud detection system at PNC then raises an eyebrow.
 
 Within seconds, the system flags the transactions, blocks the card, and sends you a message asking if you’ve somehow turned into a midnight tech enthusiast. You reply NO, your card is saved, and your credit card goes back to its quiet, food-ordering life.
 
-**=> It is an example of how a fraud detection system in the real world works. And I designed this repository to simulate a system like that.**
+**=> It is an example of how a fraud detection system in the real world works. And this repository contains everything to simulate a system like that.**
 
 ## 2/ Model Development: ##
 
