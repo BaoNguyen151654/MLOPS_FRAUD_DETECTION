@@ -60,7 +60,7 @@ I’m not sure if this is the right name. These features are used to track trans
 - **trans_date_trans_time:** The time at which a user makes a transaction. In this simulation, this feature is automatically retrieved from the user’s system clock when they click **“Send Money”**.
 - **Merchant:** Who gets the money from the transaction.
 
-**Offline Features:** The user provides the system with these features before making a transaction.
+**Offline Features:** The user provides the system with these features while making a transaction.
 
 - **category**: The category of the transaction, such as personal care, food and dining, etc.
 - **amt**: The total amount of the transaction.
@@ -69,6 +69,13 @@ I’m not sure if this is the right name. These features are used to track trans
   In this simulation, the coordinates are randomly generated when the user clicks "Send Money".
 - **merch_lat** and **merch_long**: The geographic coordinates of the recipient. Just like lat and long, they are generated randomly.  
 
+**Online Features:** We cannot track or ask customers to provide these features. They are generated automatically as the user makes transactions.
+
+- **amt_pre**: The total amount of the user’s previous transaction.
+- **lat_pre** and **long_pre**: The geographic coordinates of the user when making the previous transaction.
+- **merch_lat_pre** and **merch_long_pre:** The geographic coordinates of the recipient when making the previous transaction.
+- **pre_mer**: Indicates whether the current transaction is made at the same merchant as the previous transaction: 1 if the merchant is the same, 0 otherwise.
+- **time_last_trans**: Time since the previous transaction, in seconds.
 
 
 
