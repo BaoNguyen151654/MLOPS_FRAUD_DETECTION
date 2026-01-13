@@ -47,6 +47,10 @@ As for Logistic Regression, the model performs well only if the data satisfies c
 
 This is the dataset I used for this project. You can download it from [here](https://www.kaggle.com/datasets/kartik2112/fraud-detection).
 
+When my model was in the notebook, I used to think that good features are the ones most correlated with the target feature. 
+But in production, real-time availability matters more.
+I mean, come on, you can’t use **next_transaction_amount** in the real world, can you? 
+
 And here are the features I used. I have classified them into three types:
 
 **Tracking features:** 
