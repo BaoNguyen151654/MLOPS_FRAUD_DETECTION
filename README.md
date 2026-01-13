@@ -1,6 +1,6 @@
 # MLops Pipelines For Real-time Credit Fraud Detection
 ---
-## 1/ Project Overview:
+## 1/ Overview:
 Just imagine you are a normal customer at PNC Bank.
 Your credit card life is very predictable: you just use it to order food online, usually under $70, and you’re loyal to your hometown (you basically never leave it). If your credit card had a personality, it would be "boring but reliable".
 
@@ -21,3 +21,14 @@ Within seconds, the system flags the transactions, blocks the card, and sends yo
 **=> It is an example of how a fraud detection system in the real world works. This repository can help you simulate a system like that.**
 
 ## 2/ Model Development: ##
+
+To tackle this fraud detection challenge, I turn to my trusted ally:
+
+<p align="center">
+  <strong>XGBoost, I choose you! ⚡</strong>
+</p>
+
+<p align="center">
+  <img src="Images/gif.gif" alt="Funny GIF" />
+</p>
+
