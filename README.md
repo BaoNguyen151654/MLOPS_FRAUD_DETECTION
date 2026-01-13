@@ -6,7 +6,7 @@ Your credit card life is very predictable: you use it to order food online, usua
 
 Then one night, at 2:45 AM, while you’re peacefully asleep, your credit card suddenly decides it’s time for an adventure.
 
-💥 $1,350 spent at an online electronics store.
+💥 $6,350 spent at an online electronics store.
 
 💥 Another big purchase a few minutes later.
 
