@@ -109,3 +109,8 @@ With **a recall of 90% for class 1**, we can be confident that the model is doin
 
 ## 3/ Machine Learning Operations (MLOps): ##
 
+Now, it's time to take the model out of the notebook: 
+
+<p align="center">
+  <img src="Images/Pipeline.png" alt="MLOPS" />
+</p>
