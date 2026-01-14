@@ -76,8 +76,12 @@ I’m not sure if this is the right name. These features are used to track trans
 - **merch_lat_pre** and **merch_long_pre:** The geographic coordinates of the recipient when making the previous transaction.
 - **pre_mer**: Indicates whether the current transaction is made at the same merchant as the previous transaction: 1 if the merchant is the same, 0 otherwise.
 - **time_last_trans**: Time since the previous transaction, in seconds.
+  
+### c) Oversampling with SMOTE ###
 
-### b) Evaluation ###
+The training set contains **1,296,675 transactions**, of which only **7,506** are fraud. This is an imbalanced dataset. I use **SMOTE** to oversample the training set, increasing the number of fraud transactions by **1.5×**.
+
+### d) Evaluation ###
 
 Evaluating a machine learning model is an art. Achieving 100% accuracy on the test set is far less important than estimating how the model will perform in the real world. Let’s break down how the model may fail:
 
@@ -99,4 +103,14 @@ Evaluating a machine learning model is an art. Achieving 100% accuracy on the te
 
 With **a recall of 90% for class 1**, we can be confident that the model is doing a good job detecting fraud transactions. But is it worth the trade-off?
 
-**=> The answer is yes**. Let’s do a quick calculation. Based on the confusion matrix, **5,916** out of **553,574** transactions are classified as fraud while they are not. So when a customer makes a transaction, the probability of incorrectly flagging it as fraud is **(5916/553574)×100≈1.07%**, which is acceptable.
+**=> The answer is likely NO.** Let’s look at the cost. Based on the confusion matrix, **5,916** out of **553,574** legitimate transactions are incorrectly classified as fraud (False Positives). This results in **a False Positive Rate of (5916/553574)×100 ≈ 1.07%**.
+
+**=> While 1.07% sounds innocent, that’s 6,000 angry customers wondering why their cards were declined.
+Since this project focuses on the production pipeline, not chasing decimal points, I’m shipping it.**
+
+<p align="center">
+  <strong>Quote of the day: Always know your model's limits... before the users find them for you. 🙂 </strong>
+</p>
+
+## 3/ Machine Learning Operations (MLOps): ##
+
