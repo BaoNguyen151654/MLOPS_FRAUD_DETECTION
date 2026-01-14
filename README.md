@@ -112,7 +112,7 @@ With **a recall of 90% for class 1**, we can be confident that the model is doin
 Now, it's time to take the model out of the notebook: 
 
 <p align="center">
-  <img src="Images/Pipeline.png" alt="MLOPS" />
+  <img src="Images/MLops.png" alt="MLOPS" />
 </p>
 
 This is the complete MLOps pipeline for my credit fraud detection system. The detailed explanation is as follows:
