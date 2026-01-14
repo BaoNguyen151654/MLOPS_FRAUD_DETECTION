@@ -49,7 +49,7 @@ This is the dataset I used for this project. You can download it from [here](htt
 
 When my model was in the notebook, I used to think that good features are the ones most correlated with the target feature. 
 But in production, real-time availability matters more.
-I mean, come on, you can’t use **next_transaction_amount** in the real world, can you? 
+I mean, come on, you can’t use *next_transaction_amount* in the real world, can you? 
 
 And here are the features I used. I have classified them into three types:
 
@@ -114,3 +114,12 @@ Now, it's time to take the model out of the notebook:
 <p align="center">
   <img src="Images/Pipeline.png" alt="MLOPS" />
 </p>
+
+This is the complete MLOps pipeline for my credit fraud detection system. The detailed explanation is as follows:
+
+- **User -> Flask API:** The user sends a transaction request to the Flask API, which includes tracking and offline features such as *cc_num, merchant, category,* and *amt*.
+The *trans_date_trans_time* is obtained from the user’s system clock. For *lat, long, merch_lat,* and *merch_long*, the values are generated randomly. In a real-world system, these geographical features would be obtained from the user and merchant GPS.
+- **Flask API <-> MySQL Database:** Online features are computed by querying the database with *cc_num* to retrieve the user’s transaction history.
+- **Flask API <-> XGB Model:** After computing the online features, the API combines them with the offline features and sends the full feature set to the model.
+The model then returns a prediction: fraud or non-fraud.
+- **Flask API -> User:** The Flask API receives the prediction from the model and decides whether to accept the transaction (non-fraud) or deny it (fraud).
