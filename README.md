@@ -77,6 +77,26 @@ I’m not sure if this is the right name. These features are used to track trans
 - **pre_mer**: Indicates whether the current transaction is made at the same merchant as the previous transaction: 1 if the merchant is the same, 0 otherwise.
 - **time_last_trans**: Time since the previous transaction, in seconds.
 
+### b) Evaluation ###
+
+Evaluating a machine learning model is an art. Achieving 100% accuracy on the test set is far less important than estimating how the model will perform in the real world. Let’s break down how the model may fail:
+
+- **The model predicts a fraud transaction as non-fraud (False Negative):** Scammers love this. In this case, our customers lose their money. From the company’s perspective, failing to handle fraud cases can also lead to legal exposure.
+- **The model predicts a non-fraud transaction as fraud (False Positive):** Customers may be annoyed by the extra friction, but no financial loss occurs since the transaction can be released once the customer confirms it.
+  
+**=> This is clearly a trade-off between financial loss and customer experience. As a business owner, my priority would be to minimize false negatives and accept more friction if necessary, therefore optimizing recall over precision is my priority.**
 
 
+              Precision    Recall  F1-score   Support
+           0       1.00      0.99      0.99    553574
+           1       0.25      0.90      0.39      2145
+    Accuracy                           0.99    555719
 
+
+<p align="center">
+  <img src="Images/Con_matrix.png" alt="Matrix" />
+</p>
+
+With **a recall of 90% for class 1**, we can be confident that the model is doing a good job detecting fraud transactions. But is it worth the trade-off?
+
+**=> The answer is yes**. Let’s do a quick calculation. Based on the confusion matrix, **5,916** out of **553,574** transactions are classified as fraud while they are not. So when a customer makes a transaction, the probability of incorrectly flagging it as fraud is **(5916/553574)×100≈1.07%**, which is acceptable.
