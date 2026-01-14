@@ -88,7 +88,7 @@ Evaluating a machine learning model is an art. Achieving 100% accuracy on the te
 - **The model predicts a fraud transaction as non-fraud (False Negative):** Scammers love this. In this case, our customers lose their money. From the company’s perspective, failing to handle fraud cases can also lead to legal exposure.
 - **The model predicts a non-fraud transaction as fraud (False Positive):** Customers may be annoyed by the extra friction, but no financial loss occurs since the transaction can be released once the customer confirms it.
   
-**=> This is clearly a trade-off between financial loss and customer experience. As a business owner, my priority would be to minimize false negatives and accept more friction if necessary, therefore optimizing recall over precision is my priority.**
+**=> This is clearly a trade-off between financial loss and customer experience. In this case, my business sense tells me to minimize false negatives and accept more friction if necessary, therefore optimizing recall over precision is my priority.**
 
 
               Precision    Recall  F1-score   Support
