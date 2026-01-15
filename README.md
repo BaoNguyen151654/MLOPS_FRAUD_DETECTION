@@ -35,7 +35,7 @@ To tackle this fraud detection challenge, I turn to my trusted ally:
 </p>
 
 **Why do I choose XGBoost?**
-Simply because of its efficiency. Just imagine that a single false positive can result in a $10,000 loss for your customer.
+Simply because of its efficiency. Just imagine that a single false negative can result in a $10,000 loss for your customer.
 Trusting such a task to a simple KNN model?
 **Hear me out, bro. That should be illegal 🙃.**
 
