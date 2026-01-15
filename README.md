@@ -1,5 +1,8 @@
 # MLops Pipelines For Real-time Credit Fraud Detection
 ---
+
+**Description:** The goal of this project is to simulate a real-world credit banking system. It covers the full machine learning lifecycle, including feature engineering, algorithm selection, oversampling for class imbalance, precision–recall trade-off analysis, and model deployment. An XGBoost model was trained and deployed as a RESTful service using a Flask API, then containerized with Docker for scalability. To handle data drift, the system starts computing the Population Stability Index (PSI) each time the data volume increases by 20%. If the PSI exceeds 0.3, it automatically triggers model retraining.
+
 ## 1/ Overview:
 Just imagine you are a normal customer at PNC Bank.
 Your credit card life is very predictable: you just use it to order food online, usually under $70, and you’re loyal to your hometown (you basically never leave it). If your credit card had a personality, it would be "boring but reliable".
