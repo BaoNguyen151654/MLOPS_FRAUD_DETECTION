@@ -108,7 +108,7 @@ With **a recall of 90% for class 1**, we can be confident that the model is doin
 
 **=> The answer is likely NO.** Let’s look at the cost. Based on the confusion matrix, **5,916** out of **553,574** legitimate transactions are incorrectly classified as fraud (False Positives). This results in **a False Positive Rate of (5916/553574)×100 ≈ 1.07%**.
 
-**=> In a real-world system, the false positive rate should ideally be around 0.01 or lower. However, a model that looks good in a notebook does not mean it will survive in production. My philosophy is simple: deploy first, fine-tune later.**
+**=> In a real-world system, the false positive rate should ideally be around 0.1 or lower. However, a model that looks good in a notebook does not mean it will survive in production. My philosophy is simple: deploy first, fine-tune later.**
 
 ## 3/ Machine Learning Operations (MLOps): ##
 
