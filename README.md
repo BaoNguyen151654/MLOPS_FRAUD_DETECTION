@@ -115,7 +115,7 @@ Now, it's time to take the model out of the notebook. The entire system is packa
   <img src="Images/MLops.png" alt="MLOPS" />
 </p>
 
-This is the complete MLOps pipeline for my credit fraud detection system. The detailed explanation is as follows:
+This is the complete MLOps pipeline for my credit fraud detection system:
 
 - **User -> Flask API:** The user sends a transaction request to the Flask API, which includes tracking and offline features such as *cc_num, merchant, category,* and *amt*.
 The *trans_date_trans_time* is obtained from the user’s system clock. For *lat, long, merch_lat,* and *merch_long*, the values are generated randomly. In a real-world system, these geographical features would be obtained from the user and merchant GPS.
