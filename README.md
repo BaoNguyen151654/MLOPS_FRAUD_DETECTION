@@ -112,7 +112,9 @@ With **a recall of 90% for class 1**, we can be confident that the model is doin
 
 ## 3/ Machine Learning Operations (MLOps): ##
 
-Now, it's time to take the model out of the notebook. The entire system is packaged and deployed using **Docker**. 
+Now, it's time to take the model out of the notebook. 
+
+The system is packaged and deployed using **Docker**. 
 
 <p align="center">
   <img src="Images/MLops.png" alt="MLOPS" />
