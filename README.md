@@ -123,3 +123,8 @@ The *trans_date_trans_time* is obtained from the user’s system clock. For *lat
 - **Flask API <-> XGB Model:** After computing the online features, the API combines them with the offline features and sends the full feature set to the model.
 The model then returns a prediction: fraud or non-fraud.
 - **Flask API -> User:** The Flask API receives the prediction from the model and decides whether to accept the transaction (non-fraud) or deny it (fraud).
+- **Model Monitoring:** A JSON file is initialized to store the baseline transaction volume.
+When the total number of transactions exceeds the baseline by 20%, the system updates the baseline in the JSON file and computes the average PSI across features.
+If the average PSI is greater than 0.3 (data drift), automatic model retraining is triggered.
+- **Model retraining:** The model is retrained on both old and new data in a blind retraining process.
+A limitation of this approach is temporal data leakage. Therefore, manual model evaluation is still required every 3–6 months.
