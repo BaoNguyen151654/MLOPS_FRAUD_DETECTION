@@ -82,7 +82,7 @@ I’m not sure if this is the right name. These features are used to track trans
   
 ### c) Oversampling with SMOTE ###
 
-The training set contains **1,296,675 transactions**, of which only **7,506** are fraud. This is an imbalanced dataset. I use **SMOTE** to oversample the training set, increasing the number of fraud transactions by **1.5×**.
+To address the severe class imbalance, **SMOTE** was applied with a sampling strategy of **0.5**. This process synthetically generated fraud transactions until the minority class reached a **50%** ratio relative to the majority class
 
 ### d) Evaluation ###
 
