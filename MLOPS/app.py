@@ -191,7 +191,7 @@ def check_drift_and_retrain():
             X = df[FEATURE_COLUMNS]
             y = df['is_fraud']
             
-            new_model = xgb.XGBClassifier(use_label_encoder=False, eval_metric='logloss')
+            new_model = xgb.XGBClassifier(use_label_encoder=False, eval_metric="aucpr")
             new_model.fit(X, y)
 
             global_model = new_model
@@ -296,4 +296,5 @@ def index():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
 
