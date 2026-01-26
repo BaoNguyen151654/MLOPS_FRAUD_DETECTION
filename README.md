@@ -80,7 +80,7 @@ I’m not sure if this is the right name. These features are used to track trans
 - **pre_mer**: Indicates whether the current transaction is made at the same merchant as the previous transaction: 1 if the merchant is the same, 0 otherwise.
 - **time_last_trans**: Time since the previous transaction, in seconds.
   
-### c) Oversampling with SMOTE ###
+### c) Handling Class Imbalance ###
 The training set contains **1,296,675** transactions, of which only **7,506** are fraudulent, indicating a severe class imbalance. To address this issue, I adjust the **scale_pos_weight** parameter in the XGBoost model. This parameter is set as the ratio of the number of negative samples to the number of positive samples.
 
 `scale_pos_weight = Total Negative Samples / Total Positive Samples  
