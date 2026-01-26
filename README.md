@@ -81,8 +81,12 @@ I’m not sure if this is the right name. These features are used to track trans
 - **time_last_trans**: Time since the previous transaction, in seconds.
   
 ### c) Oversampling with SMOTE ###
-The training set contains **1,296,675 transactions**, of which only **7,506** are fraud. 
-To address the severe class imbalance, **SMOTE** was applied with a sampling strategy of **0.5**. This process synthetically generated fraud transactions until the minority class reached a **50%** ratio relative to the majority class.
+The training set contains **1,296,675** transactions, of which only **7,506** are fraudulent, indicating a severe class imbalance. To address this issue, I adjust the **scale_pos_weight** parameter in the XGBoost model. This parameter is set as the ratio of the number of negative samples to the number of positive samples.
+
+`scale_pos_weight = Total Negative Samples / Total Positive Samples  
+= 1,296,675 / 7,506 ≈ 172`
+
+Setting **scale_pos_weight = 172** increases the penalty for misclassifying fraudulent transactions relative to non-fraudulent ones, encouraging the model to pay more attention to the minority class during training.
 
 ### d) Evaluation ###
 
@@ -94,9 +98,11 @@ Evaluating a machine learning model is an art. Achieving 100% accuracy on the te
 **=> This is clearly a trade-off between financial loss and customer experience. In this case, my business sense tells me to minimize false negatives and accept more friction if necessary, therefore optimizing recall over precision is my priority.**
 
 
-              Precision    Recall  F1-score   Support
-           0       1.00      0.99      0.99    553574
-           1       0.25      0.90      0.39      2145
+              precision    recall  f1-score   support
+
+           0       1.00      0.99      1.00    553574
+           1       0.29      0.94      0.44      2145
+
     Accuracy                           0.99    555719
 
 
